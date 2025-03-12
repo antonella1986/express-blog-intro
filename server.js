@@ -14,7 +14,7 @@ app.listen(port, () => {
 });
 
 // definisco la rotta
-app.get("/", (req, res) => {
+app.get("/bacheca", (req, res) => {
     console.log("Server del mio blog");
     // esplicito il contenuto della richiesta
     const posts = [
