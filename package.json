@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A simple blog",
   "main": "server.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node server.js",
     "watch": "node --watch server.js"

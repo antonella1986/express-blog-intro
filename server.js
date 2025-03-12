@@ -1,10 +1,22 @@
+// creo la costante per l'importazione del modulo Express
 const express = require("express");
+// creo l'istanza di Express
 const app = express();
-const port = 3000;
+// indico la porta su cui il server deve ascoltare
+const port = 3001;
 
-app.get("/", req, res => {
+// dico a Express di servire i file statici presenti nella cartella public (middleware)
+app.use(express.static("public"))
+
+// dico al server di ascoltare
+app.listen(port, () => {
+    console.log("Il server è in ascolto")
+});
+
+// definisco la rotta
+app.get("/", (req, res) => {
     console.log("Server del mio blog");
-    
+    // esplicito il contenuto della richiesta
     const posts = [
         {
             id: 1,
@@ -42,6 +54,6 @@ app.get("/", req, res => {
             tag: ["ricetta", "torta", "paesana"]
         },
     ]
-
-    res.json(posts)
+    // invio la risposta al client
+    res.send(posts)
 });
